@@ -8,7 +8,7 @@ const expect = [
 ];
 
 const contacts = [
-  { label: 'Address', primary: 'Indianapolis, IN', secondary: 'Street address coming soon' },
+  { label: 'Address', primary: '4400 W 10th St', secondary: 'Indianapolis, IN 46222', href: 'https://maps.google.com/?q=4400+W+10th+St+Indianapolis+IN+46222' },
   { label: 'Phone', primary: '(317) 000-0000', secondary: 'Studio line — TBA', href: 'tel:+13170000000' },
   { label: 'Email', primary: 'hello@circlecitydance.com', secondary: 'We answer fast.', href: 'mailto:hello@circlecitydance.com' },
   { label: 'Hours', primary: 'Monday – Saturday', secondary: 'By class schedule' },
@@ -90,26 +90,26 @@ const contacts = [
           ))}
         </div>
 
-        <!-- Map placeholder / find us -->
-        <div class="mt-6 rounded-sm border border-line overflow-hidden bg-cream relative aspect-[5/3]">
-          <svg viewBox="0 0 500 300" preserveAspectRatio="xMidYMid slice" class="absolute inset-0 w-full h-full" aria-hidden="true">
-            <defs>
-              <pattern id="mapGrid" width="32" height="32" patternUnits="userSpaceOnUse">
-                <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#1B2A5B" stroke-opacity="0.08" stroke-width="1"/>
-              </pattern>
-            </defs>
-            <rect width="500" height="300" fill="url(#mapGrid)" />
-            <path d="M 0 180 C 80 160, 160 200, 250 170 S 420 130, 500 150" stroke="#1B2A5B" stroke-opacity="0.2" stroke-width="2" fill="none" />
-            <path d="M 0 90 L 500 110" stroke="#1B2A5B" stroke-opacity="0.12" stroke-width="1.5" />
-            <circle cx="280" cy="155" r="9" fill="#D52B1E" />
-            <circle cx="280" cy="155" r="22" fill="#D52B1E" fill-opacity="0.18" />
-          </svg>
-          <div class="absolute inset-0 p-5 flex flex-col justify-end">
-            <div class="text-[0.65rem] uppercase tracking-[0.22em] text-spotlight font-semibold">Find us</div>
-            <div class="font-display text-stage text-xl mt-1 leading-tight">Indianapolis</div>
-            <div class="text-stage/55 text-xs mt-1">Map &amp; directions land with the address</div>
-          </div>
-        </div>
+        <!-- Live map -->
+        <a
+          href="https://maps.google.com/?q=4400+W+10th+St+Indianapolis+IN+46222"
+          target="_blank"
+          rel="noopener"
+          class="mt-6 group block rounded-sm border border-line overflow-hidden bg-cream relative aspect-[5/3]"
+          aria-label="Open Circle City Dance in Google Maps"
+        >
+          <iframe
+            title="Map of Circle City Dance — 4400 W 10th St, Indianapolis, IN"
+            src="https://maps.google.com/maps?q=4400+W+10th+St+Indianapolis+IN+46222&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            class="absolute inset-0 w-full h-full border-0 grayscale-[20%] contrast-95 transition group-hover:grayscale-0"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+          <span class="absolute top-3 left-3 inline-flex items-center gap-2 bg-cream/95 text-stage text-[0.65rem] uppercase tracking-[0.22em] font-semibold px-3 py-1.5 rounded-full ring-1 ring-line">
+            <span class="block w-1.5 h-1.5 rounded-full bg-spotlight"></span>
+            4400 W 10th · Open in Maps →
+          </span>
+        </a>
 
         <div class="mt-6 flex items-center gap-5 text-sm text-stage/70 px-1">
           <span class="text-[0.65rem] uppercase tracking-[0.22em] text-spotlight font-semibold">Follow</span>
