@@ -1,4 +1,5 @@
 ---
+const base = import.meta.env.BASE_URL;
 ---
 
 <section id="welcome" class="section">
@@ -49,7 +50,7 @@
     <figure class="lg:col-span-5 lg:col-start-8 lg:sticky lg:top-32" data-reveal>
       <div class="relative aspect-[3/5] overflow-hidden rounded-sm ring-1 ring-line">
         <img
-          src="/images/social/fb-portrait.jpg"
+          src={`${base}images/social/fb-portrait.jpg`}
           alt="A vision board on a studio wall — sticky notes from the community sharing dreams for the new dance studio"
           class="w-full h-full object-cover"
           loading="lazy"

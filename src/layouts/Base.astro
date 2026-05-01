@@ -10,6 +10,8 @@ const {
   title = 'Circle City Dance — Indianapolis',
   description = 'A new home for dance in Indianapolis. Classes for every age and stage, taught by working artists who love the work as much as you will.',
 } = Astro.props;
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <!doctype html>
@@ -22,8 +24,8 @@ const {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="/images/brand/logo-square.jpg" />
-    <link rel="icon" type="image/jpeg" href="/images/brand/logo-square.jpg" />
+    <meta property="og:image" content={`${base}images/brand/logo-square.jpg`} />
+    <link rel="icon" type="image/jpeg" href={`${base}images/brand/logo-square.jpg`} />
     <title>{title}</title>
   </head>
   <body class="grain">

@@ -9,6 +9,7 @@ const links = [
   { href: '#visit', label: 'Visit' },
 ];
 const REGISTER_URL = 'https://app3.jackrabbitclass.com/regv2.asp?id=558073';
+const base = import.meta.env.BASE_URL;
 ---
 
 <header
@@ -18,7 +19,7 @@ const REGISTER_URL = 'https://app3.jackrabbitclass.com/regv2.asp?id=558073';
   <div class="container flex items-center justify-between gap-4">
     <a href="#top" class="flex items-center gap-3 group shrink-0">
       <span class="block h-9 w-9 rounded-full overflow-hidden bg-cream ring-1 ring-line">
-        <img src="/images/brand/logo-square.jpg" alt="" class="h-full w-full object-cover" />
+        <img src={`${base}images/brand/logo-square.jpg`} alt="" class="h-full w-full object-cover" />
       </span>
       <span class="font-display text-stage text-lg sm:text-xl tracking-tight leading-none">
         Circle City <em class="not-italic text-spotlight">Dance</em>

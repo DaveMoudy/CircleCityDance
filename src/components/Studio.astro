@@ -5,6 +5,7 @@ const features = [
   { label: 'Sound systems', body: 'Class-grade audio so the music feels the way it should — like the room itself is dancing.' },
   { label: 'Family lounge', body: 'A real waiting area with seating, wifi, and viewing windows into the studios.' },
 ];
+const base = import.meta.env.BASE_URL;
 ---
 
 <section id="studio" class="section">
@@ -23,7 +24,7 @@ const features = [
       <div class="lg:col-span-7 space-y-8">
         <div class="aspect-[5/3] relative overflow-hidden rounded-sm" data-reveal>
           <img
-            src="/images/social/fb-cover.jpg"
+            src={`${base}images/social/fb-cover.jpg`}
             alt="Circle City Dance studio banner — CCD wordmark on a deep navy gradient"
             class="absolute inset-0 w-full h-full object-cover"
             loading="lazy"
