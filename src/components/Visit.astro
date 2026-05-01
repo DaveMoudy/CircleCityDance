@@ -1,0 +1,82 @@
+---
+const REGISTER_URL = 'https://app3.jackrabbitclass.com/regv2.asp?id=558073';
+---
+
+<section id="visit" class="section bg-cream-deep/60 relative overflow-hidden">
+  <div
+    aria-hidden="true"
+    data-parallax="0.18"
+    class="absolute -right-40 -bottom-32 w-[44rem] h-[44rem] rounded-full bg-spotlight/15 blur-3xl"
+  ></div>
+  <div
+    aria-hidden="true"
+    data-parallax="0.12"
+    class="absolute -left-32 top-10 w-[32rem] h-[32rem] rounded-full bg-rose/40 blur-3xl"
+  ></div>
+
+  <div class="container relative">
+    <div class="grid lg:grid-cols-12 gap-12">
+      <div class="lg:col-span-6">
+        <p class="eyebrow flex items-center" data-reveal>
+          <span class="rule"></span>10 / Visit
+        </p>
+        <h2 class="display mt-6 text-[clamp(2.6rem,7vw,7rem)] text-stage" data-headline-split>
+          Come <em>see</em> the place.
+        </h2>
+        <p class="mt-8 text-ink/75 text-lg leading-relaxed max-w-lg" data-reveal>
+          Studio tours are open by appointment — just reach out. We'll show you around, walk through the season with you, and answer every question in the book.
+        </p>
+
+        <div class="mt-10 flex flex-wrap gap-4" data-reveal>
+          <a href={REGISTER_URL} target="_blank" rel="noopener" class="btn btn-primary" data-magnetic>
+            Register
+            <span class="arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="mailto:hello@circlecitydance.com" class="btn btn-ghost">
+            Book a tour
+          </a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 lg:col-start-8 space-y-6" data-reveal>
+        <dl class="grid grid-cols-1 sm:grid-cols-2 gap-px bg-line border border-line rounded-sm overflow-hidden">
+          <div class="bg-cream p-6">
+            <dt class="text-[0.65rem] uppercase tracking-[0.22em] text-spotlight font-semibold">Address</dt>
+            <dd class="mt-2 font-display text-xl text-stage leading-tight">
+              Indianapolis, IN
+              <span class="block text-stage/55 text-sm font-sans mt-1 not-italic">Street address coming soon</span>
+            </dd>
+          </div>
+          <div class="bg-cream p-6">
+            <dt class="text-[0.65rem] uppercase tracking-[0.22em] text-spotlight font-semibold">Phone</dt>
+            <dd class="mt-2 font-display text-xl text-stage leading-tight">
+              (317) 000-0000
+              <span class="block text-stage/55 text-sm font-sans mt-1">Studio line — TBA</span>
+            </dd>
+          </div>
+          <div class="bg-cream p-6">
+            <dt class="text-[0.65rem] uppercase tracking-[0.22em] text-spotlight font-semibold">Email</dt>
+            <dd class="mt-2 font-display text-base sm:text-lg text-stage leading-tight">
+              <a href="mailto:hello@circlecitydance.com" class="hover:text-spotlight transition-colors">hello@circlecitydance.com</a>
+              <span class="block text-stage/55 text-sm font-sans mt-1">We answer fast.</span>
+            </dd>
+          </div>
+          <div class="bg-cream p-6">
+            <dt class="text-[0.65rem] uppercase tracking-[0.22em] text-spotlight font-semibold">Hours</dt>
+            <dd class="mt-2 font-display text-xl text-stage leading-tight">
+              Mon – Sat
+              <span class="block text-stage/55 text-sm font-sans mt-1">By class schedule</span>
+            </dd>
+          </div>
+        </dl>
+
+        <div class="flex items-center gap-5 text-sm text-stage/70">
+          <span class="text-[0.65rem] uppercase tracking-[0.22em] text-spotlight font-semibold">Follow</span>
+          <a href="https://www.instagram.com/circlecitydance/" target="_blank" rel="noopener" class="hover:text-spotlight transition-colors">Instagram</a>
+          <span class="opacity-30">/</span>
+          <a href="https://www.facebook.com/profile.php?id=61582218223505" target="_blank" rel="noopener" class="hover:text-spotlight transition-colors">Facebook</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

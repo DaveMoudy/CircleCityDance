@@ -1,0 +1,69 @@
+---
+const moments = [
+  {
+    num: '01',
+    title: 'The Nutcracker',
+    body: 'Our community production — auditioned roles for Performing Company dancers, beloved by the city, every winter.',
+    feature: true,
+  },
+  {
+    num: '02',
+    title: 'Spring Recital',
+    body: 'A real theatre. Real lights. The whole studio on stage at season\'s end.',
+  },
+  {
+    num: '03',
+    title: 'Performing Companies',
+    body: 'Pre-pro dancers tour competitions and conventions across the Midwest, plus original work at home.',
+  },
+  {
+    num: '04',
+    title: 'Community Performances',
+    body: 'Festivals, fundraisers, and giving back to the city we dance in.',
+  },
+];
+---
+
+<section id="performances" class="section bg-cream-deep/40 relative overflow-hidden">
+  <div
+    aria-hidden="true"
+    data-parallax="0.12"
+    class="absolute -right-32 top-10 w-[32rem] h-[32rem] rounded-full bg-rose/30 blur-3xl"
+  ></div>
+  <div class="container relative">
+    <div class="grid lg:grid-cols-12 gap-12 items-end mb-16">
+      <div class="lg:col-span-9">
+        <p class="eyebrow flex items-center" data-reveal><span class="rule"></span>07 / Performances</p>
+        <h2 class="display mt-6 text-[clamp(2.4rem,6.4vw,6rem)] text-stage" data-headline-split>
+          The work <em>matters.</em> So does the moment it lives in.
+        </h2>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-line border border-line" data-reveal-stagger>
+      {moments.map((m) => (
+        <article
+          class={`p-8 lg:p-10 min-h-[20rem] flex flex-col justify-between relative ${m.feature ? 'bg-spotlight text-cream md:row-span-1' : 'bg-cream'}`}
+          data-reveal-item
+        >
+          <div class="flex items-center justify-between">
+            <span class={`font-display italic text-3xl ${m.feature ? 'text-cream' : 'text-spotlight'}`}>{m.num}</span>
+            {m.feature && (
+              <span class="text-[0.6rem] uppercase tracking-[0.25em] font-semibold text-cream/85 px-2 py-1 border border-cream/30 rounded-full">
+                Signature
+              </span>
+            )}
+          </div>
+          <div>
+            <h3 class={`font-display text-3xl lg:text-4xl leading-[0.95] ${m.feature ? 'text-cream' : 'text-stage'}`}>
+              {m.title}
+            </h3>
+            <p class={`mt-4 text-sm leading-relaxed ${m.feature ? 'text-cream/85' : 'text-ink/75'}`}>
+              {m.body}
+            </p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

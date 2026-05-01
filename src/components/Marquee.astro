@@ -1,0 +1,25 @@
+---
+const phrases = [
+  'Plié.',
+  'Battement.',
+  'Pirouette.',
+  'Shuffle.',
+  'Pas de bourrée.',
+  'Chassé.',
+  'Tendu.',
+  'Grand jeté.',
+  'Fouetté.',
+  'Chaîné.',
+];
+const loop = [...phrases, ...phrases];
+---
+
+<section aria-hidden="true" class="overflow-hidden border-y border-line bg-cream py-6">
+  <div class="marquee">
+    {loop.map((p, i) => (
+      <span class={`font-display text-[clamp(2rem,5vw,4.5rem)] leading-none ${i % 2 === 0 ? 'text-stage' : 'text-spotlight italic'}`}>
+        {p}
+      </span>
+    ))}
+  </div>
+</section>

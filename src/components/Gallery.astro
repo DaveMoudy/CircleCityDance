@@ -1,0 +1,69 @@
+---
+const tiles = [
+  { src: '/images/social/fb-portrait.jpg', alt: 'Vision Board with sticky notes from the community', aspect: 'aspect-[3/4]', label: 'Opening week' },
+  { src: '/images/social/fb-04.jpg', alt: 'Animal Adventure Dance Camp flyer for ages 3-6', aspect: 'aspect-[1/1]', label: 'Animal Adventure Camp' },
+  { src: '/images/social/fb-cover.jpg', alt: 'CCD wordmark banner', aspect: 'aspect-[16/9]', label: 'CCD — the studio' },
+  { src: '/images/social/fb-05.jpg', alt: 'Summer Performer\'s Camp flyer with Nutcracker audition opportunity', aspect: 'aspect-[1/1]', label: 'Performer\'s Camp' },
+  { src: '/images/social/fb-01.jpg', alt: 'Summer Session I — Discover Dance, Jazz, and Tap', aspect: 'aspect-[1/1]', label: 'Summer Session I' },
+  { src: '/images/social/fb-02.jpg', alt: 'Summer class catalog — Pilates, Latin Dance, Ballet Variations', aspect: 'aspect-[1/1]', label: 'Summer catalog' },
+  { src: '/images/social/fb-03.jpg', alt: 'Summer Session II unlimited class pass schedule', aspect: 'aspect-[1/1]', label: 'Summer Session II' },
+  { src: '/images/social/fb-06.jpg', alt: 'CCD logo mark', aspect: 'aspect-[1/1]', label: 'The mark' },
+];
+---
+
+<section id="gallery" class="section bg-cream relative">
+  <div class="container">
+    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
+      <div>
+        <p class="eyebrow flex items-center" data-reveal><span class="rule"></span>09 / In the room</p>
+        <h2 class="display mt-6 text-[clamp(2.4rem,5.6vw,5rem)] text-stage" data-headline-split>
+          A studio in <em>motion.</em>
+        </h2>
+      </div>
+      <div class="flex gap-3" data-reveal>
+        <a
+          href="https://www.instagram.com/circlecitydance/"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-ghost"
+        >
+          Instagram →
+        </a>
+        <a
+          href="https://www.facebook.com/profile.php?id=61582218223505"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-ghost"
+        >
+          Facebook →
+        </a>
+      </div>
+    </div>
+
+    <div
+      class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-5"
+      data-reveal-stagger
+    >
+      {tiles.map((t) => (
+        <figure
+          class={`relative ${t.aspect} overflow-hidden rounded-sm group ring-1 ring-line bg-cream-deep`}
+          data-reveal-item
+        >
+          <img
+            src={t.src}
+            alt={t.alt}
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            loading="lazy"
+          />
+          <div class="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-stage/85 via-stage/30 to-transparent text-cream opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <span class="text-[0.65rem] uppercase tracking-[0.22em] font-semibold">{t.label}</span>
+          </div>
+        </figure>
+      ))}
+    </div>
+
+    <p class="mt-8 text-xs uppercase tracking-[0.22em] text-stage/50" data-reveal>
+      ↳ More photography to follow once the studio is in session.
+    </p>
+  </div>
+</section>

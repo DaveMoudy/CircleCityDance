@@ -1,0 +1,48 @@
+---
+const features = [
+  { label: 'Sprung floors', body: 'Marley over sprung subfloors in every studio — kinder on knees, kinder on careers.' },
+  { label: 'Mirror walls', body: 'Wall-to-wall mirrors with the option to cover for performance-mode classes.' },
+  { label: 'Sound systems', body: 'Class-grade audio so the music feels the way it should — like the room itself is dancing.' },
+  { label: 'Family lounge', body: 'A real waiting area with seating, wifi, and viewing windows into the studios.' },
+];
+---
+
+<section id="studio" class="section">
+  <div class="container">
+    <div class="grid lg:grid-cols-12 gap-12 items-start">
+      <div class="lg:col-span-5">
+        <p class="eyebrow flex items-center" data-reveal><span class="rule"></span>08 / The Studio</p>
+        <h2 class="display mt-6 text-[clamp(2.4rem,5.6vw,5rem)] text-stage" data-headline-split>
+          Built for the <em>work.</em>
+        </h2>
+        <p class="mt-8 text-ink/75 leading-relaxed text-lg" data-reveal>
+          The space matters as much as the syllabus. Sprung floors that protect the body. Sound systems that respect the music. A lobby that respects the families who come along for the ride.
+        </p>
+      </div>
+
+      <div class="lg:col-span-7 space-y-8">
+        <div class="aspect-[5/3] relative overflow-hidden rounded-sm" data-reveal>
+          <img
+            src="/images/social/fb-cover.jpg"
+            alt="Circle City Dance studio banner — CCD wordmark on a deep navy gradient"
+            class="absolute inset-0 w-full h-full object-cover"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-stage/30 to-transparent"></div>
+          <span class="absolute bottom-4 left-4 text-cream/80 text-[0.65rem] uppercase tracking-[0.22em] font-semibold">
+            CCD — Circle City Dance
+          </span>
+        </div>
+
+        <ul class="grid sm:grid-cols-2 gap-px bg-line border border-line" data-reveal-stagger>
+          {features.map((f) => (
+            <li class="bg-cream p-6" data-reveal-item>
+              <div class="text-[0.65rem] uppercase tracking-[0.22em] font-semibold text-spotlight">{f.label}</div>
+              <p class="mt-2 text-sm text-ink/75 leading-relaxed">{f.body}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

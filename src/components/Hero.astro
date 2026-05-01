@@ -1,0 +1,115 @@
+---
+const REGISTER_URL = 'https://app3.jackrabbitclass.com/regv2.asp?id=558073';
+---
+
+<section id="top" data-hero class="relative min-h-[100svh] flex flex-col justify-end overflow-hidden pt-32 pb-16 lg:pb-24">
+  <!-- Animated ribbon -->
+  <svg
+    aria-hidden="true"
+    class="absolute inset-0 w-full h-full pointer-events-none"
+    viewBox="0 0 1600 900"
+    preserveAspectRatio="xMidYMid slice"
+  >
+    <defs>
+      <linearGradient id="ribbonGrad" x1="0" x2="1" y1="0" y2="1">
+        <stop offset="0%" stop-color="#D52B1E" stop-opacity="0.95" />
+        <stop offset="55%" stop-color="#E8554A" stop-opacity="0.9" />
+        <stop offset="100%" stop-color="#1B2A5B" stop-opacity="0.7" />
+      </linearGradient>
+    </defs>
+    <path
+      data-hero-ribbon
+      d="M -80 460 C 240 120, 540 720, 820 320 C 1100 -60, 1360 640, 1700 340"
+      fill="none"
+      stroke="url(#ribbonGrad)"
+      stroke-width="3.5"
+      stroke-linecap="round"
+    />
+    <path
+      d="M -80 520 C 240 180, 540 780, 820 380 C 1100 0, 1360 700, 1700 400"
+      fill="none"
+      stroke="#1B2A5B"
+      stroke-opacity="0.06"
+      stroke-width="80"
+      stroke-linecap="round"
+    />
+  </svg>
+
+  <!-- Decorative paint blob -->
+  <div
+    aria-hidden="true"
+    data-parallax="0.15"
+    class="absolute -right-24 -top-24 w-[42rem] h-[42rem] rounded-full bg-rose/40 blur-3xl"
+  ></div>
+
+  <div class="container relative z-10">
+    <div class="grid lg:grid-cols-12 gap-10 items-end">
+      <div class="lg:col-span-9">
+        <p data-hero-eyebrow class="eyebrow flex items-center mb-8">
+          <span class="rule"></span>
+          Circle City Dance — Indianapolis, IN
+        </p>
+
+        <h1
+          data-hero-headline
+          class="display text-stage text-[clamp(3.25rem,11vw,11rem)]"
+        >
+          Where Indy <em>moves.</em>
+        </h1>
+
+        <p
+          data-hero-sub
+          class="mt-10 max-w-xl text-lg leading-relaxed text-ink/75"
+        >
+          A new dance home in the heart of the city — built by working artists, anchored in joy, obsessed with craft. Classes for every age and every stage, from first plié to full company.
+        </p>
+
+        <div data-hero-cta class="mt-10 flex flex-wrap items-center gap-4">
+          <a
+            href={REGISTER_URL}
+            target="_blank"
+            rel="noopener"
+            class="btn btn-primary"
+            data-magnetic
+          >
+            Register for classes
+            <span class="arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="#classes" class="btn btn-ghost">
+            Browse the season
+          </a>
+        </div>
+      </div>
+
+      <aside class="lg:col-span-3 lg:pl-8 lg:border-l border-line text-stage/70 text-sm leading-relaxed">
+        <ul class="space-y-3">
+          <li data-hero-meta>
+            <span class="block text-[0.65rem] uppercase tracking-[0.2em] text-spotlight font-semibold">Est.</span>
+            2025
+          </li>
+          <li data-hero-meta>
+            <span class="block text-[0.65rem] uppercase tracking-[0.2em] text-spotlight font-semibold">Ages</span>
+            2 through adult
+          </li>
+          <li data-hero-meta>
+            <span class="block text-[0.65rem] uppercase tracking-[0.2em] text-spotlight font-semibold">Styles</span>
+            Ballet · Jazz · Tap · Hip Hop · Contemporary · Acro · Musical Theatre
+          </li>
+          <li data-hero-meta>
+            <span class="block text-[0.65rem] uppercase tracking-[0.2em] text-spotlight font-semibold">Now enrolling</span>
+            Fall season opens soon
+          </li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+
+  <!-- Scroll cue -->
+  <div class="container relative z-10 mt-16 lg:mt-24 flex items-center justify-between text-stage/50 text-xs uppercase tracking-[0.25em]">
+    <span class="flex items-center gap-3">
+      <span class="block w-10 h-px bg-current"></span>
+      Scroll to explore
+    </span>
+    <span class="hidden sm:block">01 / Welcome</span>
+  </div>
+</section>

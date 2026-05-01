@@ -1,0 +1,83 @@
+---
+const REGISTER_URL = 'https://app3.jackrabbitclass.com/regv2.asp?id=558073';
+---
+
+<section id="schedule" class="section bg-cream relative overflow-hidden">
+  <div
+    aria-hidden="true"
+    data-parallax="0.18"
+    class="absolute -left-32 -top-32 w-[36rem] h-[36rem] rounded-full bg-rose/40 blur-3xl"
+  ></div>
+  <div
+    aria-hidden="true"
+    class="absolute right-0 top-1/2 -translate-y-1/2 w-px h-2/3 bg-line"
+  ></div>
+
+  <div class="container relative">
+    <div class="grid lg:grid-cols-12 gap-12 items-start">
+      <div class="lg:col-span-7">
+        <p class="eyebrow flex items-center" data-reveal>
+          <span class="rule"></span>05 / Schedule & Registration
+        </p>
+        <h2
+          class="display mt-6 text-[clamp(2.6rem,7vw,7rem)] text-stage"
+          data-headline-split
+        >
+          The studio is <em>open.</em> See what fits.
+        </h2>
+        <p class="mt-8 max-w-xl text-ink/75 text-lg leading-relaxed" data-reveal>
+          Our full schedule, real-time availability, tuition, and registration all live in one place. We use Jackrabbit so your account, payments, and class enrollments stay in sync — set it up once and you're set for the season.
+        </p>
+
+        <div class="mt-10 flex flex-wrap gap-4" data-reveal>
+          <a
+            href={REGISTER_URL}
+            target="_blank"
+            rel="noopener"
+            class="btn btn-primary"
+            data-magnetic
+          >
+            Open the schedule
+            <span class="arrow" aria-hidden="true">→</span>
+          </a>
+          <a
+            href={REGISTER_URL}
+            target="_blank"
+            rel="noopener"
+            class="btn btn-ghost"
+          >
+            Create an account
+          </a>
+        </div>
+
+        <p class="mt-10 max-w-md text-sm text-stage/60 leading-relaxed border-l-2 border-spotlight pl-4" data-reveal>
+          Trial classes are always welcome. Reach out and we'll find you a fit before you commit.
+        </p>
+      </div>
+
+      <div class="lg:col-span-4 lg:col-start-9 grid gap-px bg-line border border-line rounded-sm overflow-hidden" data-reveal-stagger>
+        <div class="bg-cream p-7" data-reveal-item>
+          <div class="text-[0.65rem] uppercase tracking-[0.22em] text-spotlight font-semibold">Season</div>
+          <div class="font-display text-3xl mt-2 text-stage">Fall — Spring</div>
+          <p class="text-ink/70 text-sm mt-2 leading-relaxed">
+            32 weeks of classes, building toward the spring recital.
+          </p>
+        </div>
+        <div class="bg-cream p-7" data-reveal-item>
+          <div class="text-[0.65rem] uppercase tracking-[0.22em] text-spotlight font-semibold">Summer Pass</div>
+          <div class="font-display text-3xl mt-2 text-stage">$200 unlimited</div>
+          <p class="text-ink/70 text-sm mt-2 leading-relaxed">
+            Eight weeks, every class — Ballet Variations, Pilates, Leaps Turns &amp; Jazz, Latin Dance.
+          </p>
+        </div>
+        <div class="bg-cream p-7" data-reveal-item>
+          <div class="text-[0.65rem] uppercase tracking-[0.22em] text-spotlight font-semibold">Tuition</div>
+          <div class="font-display text-3xl mt-2 text-stage">Monthly</div>
+          <p class="text-ink/70 text-sm mt-2 leading-relaxed">
+            Auto-pay through Jackrabbit. Multi-class &amp; sibling discounts available.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

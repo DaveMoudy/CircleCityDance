@@ -1,0 +1,25 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-cream border-t border-line">
+  <div class="container py-14 grid md:grid-cols-12 gap-10 items-end">
+    <div class="md:col-span-7">
+      <div class="font-display text-stage text-[clamp(2.5rem,7vw,5.5rem)] leading-[0.92] tracking-tight">
+        Circle City <em class="text-spotlight italic">Dance.</em>
+      </div>
+      <p class="mt-4 text-stage/60 text-sm max-w-md">
+        A new home for dance in Indianapolis. Built for joy, taught with care, run by people who really, really love the work.
+      </p>
+    </div>
+
+    <div class="md:col-span-5 md:text-right text-stage/60 text-xs uppercase tracking-[0.22em] space-y-2">
+      <div>© {year} Circle City Dance</div>
+      <div>
+        <a href="https://www.instagram.com/circlecitydance/" target="_blank" rel="noopener" class="hover:text-spotlight transition-colors">Instagram</a>
+        <span class="mx-2 opacity-30">·</span>
+        <a href="https://www.facebook.com/profile.php?id=61582218223505" target="_blank" rel="noopener" class="hover:text-spotlight transition-colors">Facebook</a>
+      </div>
+    </div>
+  </div>
+</footer>

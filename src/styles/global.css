@@ -1,0 +1,186 @@
+@import "tailwindcss";
+@import "@fontsource-variable/fraunces/index.css";
+@import "@fontsource-variable/inter/index.css";
+
+@theme {
+  --color-cream: #FAF6F0;
+  --color-cream-deep: #F1EAE0;
+  --color-ink: #0F1530;
+  --color-stage: #1B2A5B;
+  --color-stage-soft: #2A3A75;
+  --color-spotlight: #D52B1E;
+  --color-spotlight-soft: #E8554A;
+  --color-rose: #F2D2CC;
+  --color-line: rgba(15, 21, 48, 0.12);
+
+  --font-display: "Fraunces Variable", "Fraunces", ui-serif, Georgia, serif;
+  --font-sans: "Inter Variable", "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  :root {
+    color-scheme: light only;
+  }
+
+  html {
+    background: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: var(--color-spotlight);
+    color: var(--color-cream);
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: var(--color-stage);
+  }
+
+  /* Headline display utility */
+  .display {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-variation-settings: "SOFT" 50, "WONK" 0, "opsz" 144;
+    line-height: 0.92;
+    letter-spacing: -0.035em;
+  }
+
+  .display em {
+    font-style: italic;
+    font-variation-settings: "SOFT" 100, "WONK" 1, "opsz" 144;
+    color: var(--color-spotlight);
+  }
+
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-spotlight);
+  }
+
+  .rule {
+    width: 2.25rem;
+    height: 1px;
+    background: currentColor;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0.75rem;
+    opacity: 0.6;
+  }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1.05rem 1.6rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), background 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
+    will-change: transform;
+  }
+  .btn-primary {
+    background: var(--color-spotlight);
+    color: var(--color-cream);
+    box-shadow: 0 12px 36px -16px rgba(213, 43, 30, 0.6);
+  }
+  .btn-primary:hover {
+    background: var(--color-stage);
+    transform: translateY(-2px);
+    box-shadow: 0 16px 42px -14px rgba(27, 42, 91, 0.5);
+  }
+  .btn-ghost {
+    border: 1px solid var(--color-stage);
+    color: var(--color-stage);
+  }
+  .btn-ghost:hover {
+    background: var(--color-stage);
+    color: var(--color-cream);
+    transform: translateY(-2px);
+  }
+  .btn .arrow {
+    display: inline-block;
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .btn:hover .arrow {
+    transform: translateX(4px);
+  }
+
+  /* Section + container */
+  .section {
+    padding: clamp(5rem, 10vw, 9rem) 0;
+    position: relative;
+  }
+  .container {
+    width: min(100%, 86rem);
+    margin: 0 auto;
+    padding: 0 clamp(1.25rem, 4vw, 3rem);
+  }
+
+  /* Reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  .reveal-line {
+    overflow: hidden;
+    display: inline-block;
+  }
+  .reveal-line > * {
+    display: inline-block;
+    transform: translateY(110%);
+    will-change: transform;
+  }
+
+  /* Marquee */
+  .marquee {
+    display: flex;
+    gap: 3rem;
+    white-space: nowrap;
+    animation: marquee 38s linear infinite;
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee { animation: none; }
+    .reveal, .reveal-line > * { opacity: 1; transform: none; }
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+
+  /* Subtle grain on cream — adds analog warmth */
+  .grain {
+    position: relative;
+  }
+  .grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.06;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.6 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+}

@@ -1,0 +1,72 @@
+---
+const programs = [
+  {
+    no: '01',
+    title: 'Recreational',
+    tag: 'Ages 3 – 18',
+    body:
+      'Weekly classes built around a love of movement first and technique second — but never without it. Discover Dance for the littles, single-style training for older students, and a recital that closes every season.',
+  },
+  {
+    no: '02',
+    title: 'Performing Companies',
+    tag: 'Ages 8 – 18, by audition',
+    body:
+      'Serious training for serious dancers. Conservatory-style hours, original choreography, and our annual community production of The Nutcracker. Auditions held during summer camps.',
+  },
+  {
+    no: '03',
+    title: 'Adult & Conditioning',
+    tag: 'Ages 18+',
+    body:
+      'Pilates for Adults, Intro to Latin Dance, and dancer conditioning for the grown-ups. Drop in and remember why you started — or start fresh. No tights required, no judgement allowed.',
+  },
+  {
+    no: '04',
+    title: 'Camps & Intensives',
+    tag: 'Year-round',
+    body:
+      'Animal Adventure Dance Camp for the littlest movers, Summer Performer\'s Camp for serious students, and Summer Sessions with an unlimited-class pass. Drop in for a week or commit for the whole summer.',
+  },
+];
+---
+
+<section id="programs" class="section bg-cream-deep/50">
+  <div class="container">
+    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16">
+      <div>
+        <p class="eyebrow flex items-center" data-reveal><span class="rule"></span>03 / Programs</p>
+        <h2 class="display mt-6 text-[clamp(2.4rem,5.6vw,5rem)] text-stage" data-headline-split>
+          Four ways <em>in.</em>
+        </h2>
+      </div>
+      <p class="max-w-md text-ink/70 leading-relaxed" data-reveal>
+        Whether you're chasing a Nutcracker callback or your first time at the barre, there's a track that fits.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-px bg-line" data-reveal-stagger>
+      {programs.map((p) => (
+        <article
+          class="group relative bg-cream p-8 lg:p-12 transition-colors duration-500 hover:bg-cream-deep"
+          data-reveal-item
+        >
+          <div class="flex items-baseline justify-between text-xs uppercase tracking-[0.2em]">
+            <span class="font-semibold text-spotlight transition-colors group-hover:text-stage">{p.no}</span>
+            <span class="text-stage/60">{p.tag}</span>
+          </div>
+          <h3 class="font-display text-4xl lg:text-5xl mt-6 leading-[0.95] text-stage transition-colors duration-500 group-hover:text-spotlight">
+            {p.title}
+          </h3>
+          <p class="mt-6 text-base leading-relaxed text-ink/75">
+            {p.body}
+          </p>
+          <span class="mt-8 inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] font-semibold text-spotlight">
+            Explore
+            <span class="block w-8 h-px bg-current transition-[width] duration-500 group-hover:w-14"></span>
+          </span>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
