@@ -1,5 +1,18 @@
 ---
 const REGISTER_URL = 'https://app3.jackrabbitclass.com/regv2.asp?id=558073';
+
+const expect = [
+  { num: 'i', body: 'Walk the studios — sprung floors, mirrors, the works.' },
+  { num: 'ii', body: 'Meet faculty when they\'re between classes.' },
+  { num: 'iii', body: 'Map your dancer\'s schedule together — no pressure to enroll.' },
+];
+
+const contacts = [
+  { label: 'Address', primary: 'Indianapolis, IN', secondary: 'Street address coming soon' },
+  { label: 'Phone', primary: '(317) 000-0000', secondary: 'Studio line — TBA', href: 'tel:+13170000000' },
+  { label: 'Email', primary: 'hello@circlecitydance.com', secondary: 'We answer fast.', href: 'mailto:hello@circlecitydance.com' },
+  { label: 'Hours', primary: 'Monday – Saturday', secondary: 'By class schedule' },
+];
 ---
 
 <section id="visit" class="section bg-cream-deep/60 relative overflow-hidden">
@@ -15,8 +28,9 @@ const REGISTER_URL = 'https://app3.jackrabbitclass.com/regv2.asp?id=558073';
   ></div>
 
   <div class="container relative">
-    <div class="grid lg:grid-cols-12 gap-12">
-      <div class="lg:col-span-6">
+    <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+      <!-- Left: headline + tour pitch -->
+      <div class="lg:col-span-7">
         <p class="eyebrow flex items-center" data-reveal>
           <span class="rule"></span>10 / Visit
         </p>
@@ -32,51 +46,78 @@ const REGISTER_URL = 'https://app3.jackrabbitclass.com/regv2.asp?id=558073';
             Register
             <span class="arrow" aria-hidden="true">→</span>
           </a>
-          <a href="mailto:hello@circlecitydance.com" class="btn btn-ghost">
+          <a href="mailto:hello@circlecitydance.com?subject=Studio%20Tour" class="btn btn-ghost">
             Book a tour
           </a>
         </div>
+
+        <!-- What to expect -->
+        <div class="mt-14 border-t border-line pt-8" data-reveal>
+          <p class="eyebrow flex items-center mb-6">
+            <span class="rule"></span>What to expect
+          </p>
+          <ol class="grid sm:grid-cols-3 gap-px bg-line border border-line rounded-sm overflow-hidden">
+            {expect.map((e) => (
+              <li class="bg-cream p-5">
+                <div class="font-display italic text-spotlight text-2xl">{e.num}.</div>
+                <p class="mt-2 text-sm text-ink/80 leading-snug">{e.body}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        <!-- Closing thought -->
+        <p class="mt-10 max-w-md font-display italic text-stage text-2xl leading-snug border-l-2 border-spotlight pl-5" data-reveal>
+          The first class is on us. Bring the dancer, leave the pressure.
+        </p>
       </div>
 
-      <div class="lg:col-span-5 lg:col-start-8 space-y-6" data-reveal>
-        <dl class="grid grid-cols-1 sm:grid-cols-2 gap-px bg-line border border-line rounded-sm overflow-hidden">
-          <div class="bg-cream p-6">
-            <dt class="text-[0.65rem] uppercase tracking-[0.22em] text-spotlight font-semibold">Address</dt>
-            <dd class="mt-2 font-display text-xl text-stage leading-tight">
-              Indianapolis, IN
-              <span class="block text-stage/55 text-sm font-sans mt-1 not-italic">Street address coming soon</span>
-            </dd>
-          </div>
-          <div class="bg-cream p-6">
-            <dt class="text-[0.65rem] uppercase tracking-[0.22em] text-spotlight font-semibold">Phone</dt>
-            <dd class="mt-2 font-display text-xl text-stage leading-tight">
-              (317) 000-0000
-              <span class="block text-stage/55 text-sm font-sans mt-1">Studio line — TBA</span>
-            </dd>
-          </div>
-          <div class="bg-cream p-6 sm:col-span-2">
-            <dt class="text-[0.65rem] uppercase tracking-[0.22em] text-spotlight font-semibold">Email</dt>
-            <dd class="mt-2 font-display text-stage leading-tight">
-              <a href="mailto:hello@circlecitydance.com" class="hover:text-spotlight transition-colors text-lg sm:text-xl break-all sm:break-normal">hello@circlecitydance.com</a>
-              <span class="block text-stage/55 text-sm font-sans mt-1">We answer fast.</span>
-            </dd>
-          </div>
-          <div class="bg-cream p-6">
-            <dt class="text-[0.65rem] uppercase tracking-[0.22em] text-spotlight font-semibold">Hours</dt>
-            <dd class="mt-2 font-display text-xl text-stage leading-tight">
-              Mon – Sat
-              <span class="block text-stage/55 text-sm font-sans mt-1">By class schedule</span>
-            </dd>
-          </div>
-        </dl>
+      <!-- Right: vertical contact stack -->
+      <aside class="lg:col-span-4 lg:col-start-9 lg:sticky lg:top-32 self-start space-y-1" data-reveal>
+        <div class="bg-cream rounded-sm border border-line overflow-hidden">
+          {contacts.map((c, i) => (
+            <div class={`p-6 ${i > 0 ? 'border-t border-line' : ''}`}>
+              <dt class="text-[0.65rem] uppercase tracking-[0.22em] text-spotlight font-semibold">{c.label}</dt>
+              <dd class="mt-2 font-display text-stage leading-tight">
+                {c.href ? (
+                  <a href={c.href} class="text-lg sm:text-xl hover:text-spotlight transition-colors">{c.primary}</a>
+                ) : (
+                  <span class="text-lg sm:text-xl">{c.primary}</span>
+                )}
+                <span class="block text-stage/55 text-sm font-sans mt-1">{c.secondary}</span>
+              </dd>
+            </div>
+          ))}
+        </div>
 
-        <div class="flex items-center gap-5 text-sm text-stage/70">
+        <!-- Map placeholder / find us -->
+        <div class="mt-6 rounded-sm border border-line overflow-hidden bg-cream relative aspect-[5/3]">
+          <svg viewBox="0 0 500 300" preserveAspectRatio="xMidYMid slice" class="absolute inset-0 w-full h-full" aria-hidden="true">
+            <defs>
+              <pattern id="mapGrid" width="32" height="32" patternUnits="userSpaceOnUse">
+                <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#1B2A5B" stroke-opacity="0.08" stroke-width="1"/>
+              </pattern>
+            </defs>
+            <rect width="500" height="300" fill="url(#mapGrid)" />
+            <path d="M 0 180 C 80 160, 160 200, 250 170 S 420 130, 500 150" stroke="#1B2A5B" stroke-opacity="0.2" stroke-width="2" fill="none" />
+            <path d="M 0 90 L 500 110" stroke="#1B2A5B" stroke-opacity="0.12" stroke-width="1.5" />
+            <circle cx="280" cy="155" r="9" fill="#D52B1E" />
+            <circle cx="280" cy="155" r="22" fill="#D52B1E" fill-opacity="0.18" />
+          </svg>
+          <div class="absolute inset-0 p-5 flex flex-col justify-end">
+            <div class="text-[0.65rem] uppercase tracking-[0.22em] text-spotlight font-semibold">Find us</div>
+            <div class="font-display text-stage text-xl mt-1 leading-tight">Indianapolis</div>
+            <div class="text-stage/55 text-xs mt-1">Map &amp; directions land with the address</div>
+          </div>
+        </div>
+
+        <div class="mt-6 flex items-center gap-5 text-sm text-stage/70 px-1">
           <span class="text-[0.65rem] uppercase tracking-[0.22em] text-spotlight font-semibold">Follow</span>
           <a href="https://www.instagram.com/circlecitydance/" target="_blank" rel="noopener" class="hover:text-spotlight transition-colors">Instagram</a>
           <span class="opacity-30">/</span>
           <a href="https://www.facebook.com/profile.php?id=61582218223505" target="_blank" rel="noopener" class="hover:text-spotlight transition-colors">Facebook</a>
         </div>
-      </div>
+      </aside>
     </div>
   </div>
 </section>
