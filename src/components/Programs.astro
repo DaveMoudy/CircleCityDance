@@ -6,6 +6,8 @@ const programs = [
     tag: 'Ages 3 – 18',
     body:
       'Weekly classes built around a love of movement first and technique second — but never without it. Discover Dance for the littles, single-style training for older students, and a recital that closes every season.',
+    href: '#classes',
+    cta: 'See the class menu',
   },
   {
     no: '02',
@@ -13,6 +15,8 @@ const programs = [
     tag: 'Ages 8 – 18, by audition',
     body:
       'Serious training for serious dancers. Conservatory-style hours, original choreography, and our annual community production of The Nutcracker. Auditions held during summer camps.',
+    href: '#performances',
+    cta: 'See performances',
   },
   {
     no: '03',
@@ -20,6 +24,8 @@ const programs = [
     tag: 'Ages 18+',
     body:
       'Pilates for Adults, Intro to Latin Dance, and dancer conditioning for the grown-ups. Drop in and remember why you started — or start fresh. No tights required, no judgement allowed.',
+    href: '#classes',
+    cta: 'See adult classes',
   },
   {
     no: '04',
@@ -27,6 +33,8 @@ const programs = [
     tag: 'Year-round',
     body:
       'Animal Adventure Dance Camp for the littlest movers, Summer Performer\'s Camp for serious students, and Summer Sessions with an unlimited-class pass. Drop in for a week or commit for the whole summer.',
+    href: '#gallery',
+    cta: 'See current camps',
   },
 ];
 ---
@@ -47,8 +55,9 @@ const programs = [
 
     <div class="grid md:grid-cols-2 gap-px bg-line" data-reveal-stagger>
       {programs.map((p) => (
-        <article
-          class="group relative bg-cream p-8 lg:p-12 transition-colors duration-500 hover:bg-cream-deep"
+        <a
+          href={p.href}
+          class="group relative bg-cream p-8 lg:p-12 transition-colors duration-500 hover:bg-cream-deep focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-spotlight focus-visible:ring-offset-2 focus-visible:ring-offset-cream-deep"
           data-reveal-item
         >
           <div class="flex items-baseline justify-between text-xs uppercase tracking-[0.2em]">
@@ -62,10 +71,11 @@ const programs = [
             {p.body}
           </p>
           <span class="mt-8 inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] font-semibold text-spotlight">
-            Explore
+            {p.cta}
             <span class="block w-8 h-px bg-current transition-[width] duration-500 group-hover:w-14"></span>
+            <span class="transition-transform duration-500 group-hover:translate-x-1" aria-hidden="true">→</span>
           </span>
-        </article>
+        </a>
       ))}
     </div>
   </div>
